@@ -1,59 +1,69 @@
-// TODO: Add the required header
-
+// Alex Labitigan
+// CPSC 120-12
+// 2022-09-29
+// alexlabitigan@csu.fullerton.edu
+// @auhlz
+//
+// Lab 04-01
+// Partners: @farrah-e
+//
 // Program to calculate the number of days between two Gregorian dates.
+//
 
 #include <iostream>
-
-// Main function - the entry point to our program, it does not take command
-// line arguments
 int main(int argc, char const *argv[]) {
-  cout << "Let's find the number of days between two dates...\n";
+  std::cout << "Let's find the number of days between two dates...\n";
   // TODO: Using cout, prompt the user for a starting month
+  std::cout << "Enter a start month: ";
+
+
 
   // TODO: declare a variable named start_month of type int, assign the value 0
   // to the variable.
+  int start_month{0};
+  std::cin >> start_month;
+  std::cout << "Enter a start day: ";
+  int start_day{0};
+  std::cin >> start_day;
+  std::cout << "Enter a start year: ";
+  int start_year{0};
+  std::cin >> start_year;
+  std::cout << "\n";
 
-  // TODO: Using cin, read the start month value from the terminal
+  std::cout << "Enter a end month: ";
+  int end_month{0};
+  std::cin >> end_month;
+  std::cout << "Enter a end day: ";
+  int end_day{0};
+  std::cin >> end_day;
+  std::cout << "Enter a end year: ";
+  int end_year{0};
+  std::cin >> end_year;
+  std::cout << "\n";
 
-  // TODO: Using cout, prompt the user for a starting day
+  int start_number_of_days_since_epoch{0};
+  int start_julian_day = start_day - 32075 + 1461
+      * (start_year + 4800 + (start_month - 14) / 12) / 4
+      + 367 * (start_month - 2 - (start_month - 14) / 12 * 12) / 12 - 3
+      * ((start_year + 4900 + (start_month - 14) / 12) / 100) / 4;
+  start_number_of_days_since_epoch = start_julian_day;
 
-  // TODO: declare a variable named start_day of type int, assign the value 0 to
-  // the variable.
+int end_number_of_days_since_epoch{0};
+  int end_julian_day = end_day - 32075 + 1461
+      * (end_year + 4800 + (end_month - 14) / 12) / 4
+      + 367 * (end_month - 2 - (end_month - 14) / 12 * 12) / 12 - 3
+      * ((end_year + 4900 + (end_month - 14) / 12) / 100) / 4;
+  end_number_of_days_since_epoch = end_julian_day;
 
-  // TODO: Using cin, read the start day value from the terminal
+  int number_days{0};
+  number_days = end_number_of_days_since_epoch - start_number_of_days_since_epoch;
+  std::cout << "The number of days between " << start_month << "/" << start_day <<
+  "/" << start_year << " and " << end_month << "/" << end_day <<
+  "/" << end_year <<" is " << number_days << " days" << "\n";
 
-  // TODO: Using cout, prompt the user for a starting year
 
-  // TODO: declare a variable named start_year of type int, assign the value 0
-  // to the variable.
 
-  // TODO: Using cin, read the start year value from the terminal
-
-  // TODO: Print out a blank line between the two dates to make it easy to read.
-
-  // TODO: Using cout, prompt the user for a ending month
-
-  // TODO: declare a variable named end_month of type int, assign the value 0 to
-  // the variable.
-
-  // TODO: Using cin, read the end month value from the terminal
-
-  // TODO: Using cout, prompt the user for a ending day
-
-  // TODO: declare a variable named end_day of type int, assign the value 0 to
-  // the variable.
-
-  // TODO: Using cin, read the end day value from the terminal
-
-  // TODO: Using cout, prompt the user for a ending year
-
-  // TODO: declare a variable named end_year of type int, assign the value 0 to
-  // the variable.
-
-  // TODO: Using cin, read the end year value from the terminal
-
-  // TODO: Declare a variable named start_number_of_days_since_epoch of type
-  // int, assign the value 0 to the variable.
+  //std::cout << "Debug: " << end_number_of_days_s/ starting number of days:
 
   // TODO: Calculate the Julian day of the starting date using the formula given
   // in the README.md and assign the result to the variable
