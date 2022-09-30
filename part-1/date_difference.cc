@@ -9,7 +9,6 @@
 //
 // Program to calculate the number of days between two Gregorian dates.
 //
-
 #include <iostream>
 int main(int argc, char const *argv[]) {
   std::cout << "Let's find the number of days between two dates...\n";
